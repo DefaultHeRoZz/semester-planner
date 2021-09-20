@@ -1,0 +1,70 @@
+﻿<Window x:Class="semester_planner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:semester_planner"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="515" Width="1000">
+    <Grid HorizontalAlignment="Left" Width="1064" RenderTransformOrigin="0.489,0.514" Margin="0,0,0,-90">
+
+        <TabControl Grid.ColumnSpan="2">
+            <TabItem Header="Module info">
+                <Grid Background="#FFE5E5E5" Margin="-2,0,62,0">
+
+                    <Label Content="Code:" HorizontalAlignment="Left" Margin="181,170,0,0" VerticalAlignment="Top" Width="63" Height="35"/>
+                    <Label Content="Name:" HorizontalAlignment="Left" Margin="181,215,0,0" VerticalAlignment="Top" Width="63" Height="35"/>
+                    <Label Content="Number of credits:" HorizontalAlignment="Left" Margin="120,255,0,0" VerticalAlignment="Top" Width="124" Height="35"/>
+                    <Label Content="Class hours per week:" HorizontalAlignment="Left" Margin="103,303,0,0" VerticalAlignment="Top" Width="146" Height="34"/>
+                    <Label Content="Enter the Following info:" HorizontalAlignment="Left" Margin="270,105,0,0" VerticalAlignment="Top" Width="146" Height="34"/>
+                    <TextBox x:Name="txtCode" HorizontalAlignment="Left" Margin="249,170,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Height="23" Grid.Column="10"/>
+                    <TextBox x:Name="txtHours" HorizontalAlignment="Left" Margin="248,308,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Height="24"/>
+                    <TextBox x:Name="txtCredits"  HorizontalAlignment="Left" Margin="249,258,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Height="23"/>
+                    <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="249,215,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Height="25"/>
+                    <Button Content="Clear" HorizontalAlignment="Left" Margin="176,387,0,0" VerticalAlignment="Top" Width="53" Height="20" Click="Button_Click"/>
+                    <Button Content="Exit" HorizontalAlignment="Left" Margin="440,387,0,0" VerticalAlignment="Top" Width="59" Height="20" Click="Button_Click_1"/>
+                    <ListBox x:Name="Info_Output" HorizontalAlignment="Left" Height="219" Margin="608,123,0,0" VerticalAlignment="Top" Width="279"/>
+                    <Button x:Name="btnDisplay" Content="Display" HorizontalAlignment="Left" Margin="249,387,0,0" VerticalAlignment="Top" Width="73" Height="20" Click="Button_Click_1"/>
+                    <Label Content="Amount of modules :" HorizontalAlignment="Left" Margin="103,57,0,0" VerticalAlignment="Top" Width="120" Height="34"/>
+                    <TextBox x:Name="txtAmtModules" HorizontalAlignment="Left" Margin="249,57,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Height="23"/>
+                    <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="611,378,0,0" VerticalAlignment="Top" Click="Button_Click_3" RenderTransformOrigin="0.5,0.5" Width="282">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.563"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                    </Button>
+                    <Button Content="Add" HorizontalAlignment="Left" Margin="343,387,0,0" VerticalAlignment="Top" Click="Button_Click_2" Width="73"/>
+                    <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="470,59,0,0" VerticalAlignment="Top" Click="txtCount_Click" Width="50"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Study Scheduling">
+                <Grid Background="#FFE5E5E5" Margin="10,0,-10,0">
+
+                    <Label Content="Course:" HorizontalAlignment="Left" Margin="34,73,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Content="Day Studied " HorizontalAlignment="Left" Margin="16,207,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox x:Name="txtCourse" HorizontalAlignment="Left" Margin="110,81,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Button  Content="Clear" HorizontalAlignment="Left" Margin="47,305,0,0" VerticalAlignment="Top" Width="82" Grid.Column="1" Click="Button_Click_4"/>
+                    <DatePicker x:Name="dpSemesterStartDate" HorizontalAlignment="Left" Margin="110,162,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <ListBox x:Name ="SelfStudyOutput"  HorizontalAlignment="Left" Height="203" Margin="28,335,0,0" VerticalAlignment="Top" Width="374" Grid.ColumnSpan="2"/>
+                    <Button  x:Name="btnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="157,305,0,0" VerticalAlignment="Top" Width="82" Grid.Column="1" Click="btnCalculate_Click"/>
+                    <ListBox x:Name="FinalOutput" HorizontalAlignment="Left" Height="376" Margin="523,78,0,0" VerticalAlignment="Top" Width="318" SelectionChanged="FinalOutput_SelectionChanged" Grid.Column="1"/>
+                    <Label Content="Enter the following info:" HorizontalAlignment="Left" Margin="102,33,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Content="Hours Studied: " HorizontalAlignment="Left" Margin="9,257,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox x:Name="txtHoursStud" HorizontalAlignment="Left" Margin="110,261,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Label Content="Start date:" HorizontalAlignment="Left" Margin="29,160,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="110,213,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Button x:Name="btnCalculate1" Content="Calculate" HorizontalAlignment="Left" Margin="523,490,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.063,-2.251" Width="318" Grid.Column="1" Click="btnCalculate1_Click"/>
+                    <Button x:Name="btnClear1" Content="Clear" HorizontalAlignment="Left" Margin="523,518,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.063,-2.251" Width="318" Grid.Column="1" Click="btnClear1_Click"/>
+                    <Label Content="Weeks in a semester:" HorizontalAlignment="Left" Margin="-6,121,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtNumOfWeeks" HorizontalAlignment="Left" Margin="114,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Window>
